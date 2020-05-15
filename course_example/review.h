@@ -11,6 +11,9 @@ typedef enum genre Genre;
 using namespace std;
 
 class Review {
+private:
+	string genreToString() const;
+
 protected:
 	uint id;
 	string title;
@@ -29,6 +32,7 @@ public:
 	long getDuration() const;
 	float getScore() const;
 	void setScore(float s);
+	void toString() const;
 };
 
 Review::Review() {
@@ -85,6 +89,27 @@ float Review::getScore() const {
 
 void Review::setScore(float s) {
 	score = s;
+}
+
+string Review::genreToString() const {
+	switch(genre) {
+		case ACTION : return "action"; //if (g == ACTION) { return "action"}
+		case COMEDY : return "comedy"; // else if (g == COMEDY) { return "comedy" }
+		case HORROR : return "horror";
+		case DRAMA  : return "drama";
+		case ANIMATION : return "animation";
+		case ROMANTIC : return "romantic";
+		case MUSICAL : return "musical";
+		case SCIFI : return "scifi";
+		case THRILLER : return "thriller";
+		case WAR : return "war";
+		case WESTERN : return "western";
+		default : return "undefined";
+	}
+}
+
+void Review::toString() const {
+	cout << "Id = " << id << " Title = " << title << " Genre = " << genreToString() << " duration = " << duration << " Score = " << score << "\n";
 }
 
 #endif
