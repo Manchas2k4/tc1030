@@ -33,7 +33,7 @@ public:
 	virtual long getDuration() const;
 	float getScore() const;
 	void setScore(float s);
-	string toString() const;
+	virtual string toString() const;
 };
 
 Review::Review() {
