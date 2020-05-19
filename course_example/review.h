@@ -2,11 +2,7 @@
 #define REVIEW_H
 
 #include <string>
-#include <cmath>
-
-// pow(x, n) => double
-// (x * x) => x^2
-// sqrt(x) => la raiz cuadrada de x
+#include <sstream>
 
 enum genre {UNDEFINED, ACTION, COMEDY, HORROR, DRAMA, ANIMATION, ROMANTIC, MUSICAL, SCIFI, THRILLER, WAR, WESTERN};
 
@@ -34,10 +30,10 @@ public:
 	uint getId() const;
 	string getTitle() const;
 	Genre getGenre() const;
-	long getDuration() const;
+	virtual long getDuration() const;
 	float getScore() const;
 	void setScore(float s);
-	void toString() const;
+	string toString() const;
 };
 
 Review::Review() {
@@ -113,8 +109,12 @@ string Review::genreToString() const {
 	}
 }
 
-void Review::toString() const {
-	cout << "Id = " << id << " Title = " << title << " Genre = " << genreToString() << " duration = " << duration << " Score = " << score << "\n";
+string Review::toString() const {
+	stringstream aux;
+
+	aux << "Id = " << id << " Title = " << title << " Genre = " << genreToString() << " duration = " << duration << " Score = " << score;
+
+	return aux.str();
 }
 
 #endif

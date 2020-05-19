@@ -1,27 +1,23 @@
 #include <iostream>
 #include <string>
 #include "review.h"
+#include "episode.h"
+#include "movie.h"
 
 using namespace std;
-
-
-//{UNDEFINED, ACTION, COMEDY, HORROR, DRAMA, ANIMATION, ROMANTIC, MUSICAL, SCIFI, THRILLER, WAR, WESTERN};
-
-void function(Review aux) {
-	aux.setScore(100);
-	aux.toString();
-}
 
 int main(int argc, char* argv[]) {
 	Review a;
 	Review b(1, "Logan's Run", SCIFI);
 	Review c(2, "Scary movie", HORROR);
+	Episode d(3, "A long way to heaven", DRAMA, 60, 8, 1);
+	Movie e(4, "Metropolis", SCIFI, 120, 9);
 
 	cout << "Review a\n";
-	a.toString();
+	cout << a.toString() << "\n";
 
 	cout << "Review b\n";
-	b.toString();
+	cout << b.toString() << "\n";
 
 	float s;
 	cout << "new score: ";
@@ -29,15 +25,13 @@ int main(int argc, char* argv[]) {
 	b.setScore(s);
 
 	cout << "Review b\n";
-	b.toString();
+	cout << b.toString() << "\n";
 
-	Review d(b);
-	cout << "Review d\n";
-	d.toString();
+	cout << "Episode d\n";
+	cout << d.toString() << "\n";
 
-	function(b);
-	cout << "Review b\n";
-	b.toString();
+	cout << "Movie e\n";
+	cout << e.toString() << "\n";
 
 	return 0;
 }
