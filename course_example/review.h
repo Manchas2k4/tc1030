@@ -2,6 +2,11 @@
 #define REVIEW_H
 
 #include <string>
+#include <cmath>
+
+// pow(x, n) => double
+// (x * x) => x^2
+// sqrt(x) => la raiz cuadrada de x
 
 enum genre {UNDEFINED, ACTION, COMEDY, HORROR, DRAMA, ANIMATION, ROMANTIC, MUSICAL, SCIFI, THRILLER, WAR, WESTERN};
 
