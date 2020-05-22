@@ -15,6 +15,10 @@ public:
 	string getType() const;
 	virtual float getArea() const;
 	virtual float getPerimeter() const;
+	/*
+	virtual float getArea() const = 0;
+	virtual float getPerimeter() const = 0;
+	*/
 };
 
 Figure::Figure() {
