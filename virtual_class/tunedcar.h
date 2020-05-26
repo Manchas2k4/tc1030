@@ -8,6 +8,12 @@
 
 using namespace std;
 
+// BASE: return weight * cost;
+
+// TwoDay: return Package::calculateCost() + rate;
+
+// Overnight: return Package::calculateCost() + (weight * rateAd);
+
 class TunedCar : public Car {
 private:
 	int nitros;
