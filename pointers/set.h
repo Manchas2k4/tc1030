@@ -66,11 +66,24 @@ bool Set::remove(uint number) {
 }
 
 Set* Set::join(const Set &b) {
+	int i;
+	int min = (size < b.size)? size : b.size;
 	int max = (size > b.size)? size : b.size;
+
 	Set *result = new Set(max);
-	for (int i = 0; i <= max; i++) {
-		if (numbers[i] == true || b.numbers[i] == false) {
+	for (i = 1; i <= min; i++) {
+		if (numbers[i] == true || b.numbers[i] == true) {
 			result->numbers[i] = true;
+		}
+	}
+
+	if (size < b.size) {
+		for (; i <= b.size; i++) {
+			result->numbers[i] = b.numbers[i];
+		}
+	} else {
+		for (; i <= size; i++) {
+			result->numbers[i] = numbers[i];
 		}
 	}
 	return result;
