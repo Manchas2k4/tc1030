@@ -44,13 +44,15 @@ void SalariedEmployee::setWeeklySalary(float ws) {
 	weeklySalary = ws;
 }
 
-string SalariedEmployee::toString() const {	
+string SalariedEmployee::toString() const {
 	stringstream output;
-
+	
+	output << Employee::toString() << "\n" << "Weekly Salary: " << weeklySalary;
 	return output.str();
 }
 
 float SalariedEmployee::earnings() const {
+	return weeklySalary;
 }
 
 #endif

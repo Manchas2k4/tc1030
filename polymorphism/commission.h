@@ -60,11 +60,14 @@ void CommissionEmployee::setCommissionRate(float cr) {
 
 string CommissionEmployee::toString() const {
 	stringstream output;
-
+	
+	output << Employee::toString() << "\n" << "Gross Sales: " << grossSales << "\n"
+		   << "Commission Rate: " << commissionRate;
 	return output.str();
 }
 
 float CommissionEmployee::earnings() const {
+	return grossSales * commissionRate;
 }
 
 #endif

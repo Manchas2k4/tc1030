@@ -62,11 +62,18 @@ void HourlyEmployee::setHours(float h) {
 
 string HourlyEmployee::toString() const {
 	stringstream output;
-
+	
+	output << Employee::toString() << "\n" << "Hourly Wage: " << wage << "\n"
+		   << "Hours Worked: " << hours;
 	return output.str();
 }
 
 float HourlyEmployee::earnings() const {
+	if (hours <= HOURSPERWEEK) {
+		return (hours * wage);
+	} else {
+		return (HOURSPERWEEK * wage) + ((hours - 40) * wage * 1.5);
+	}
 }
 
 #endif
