@@ -57,13 +57,7 @@ string Payroll::toString() const {
 	stringstream output;
 	
 	for (uint i = 0; i < count; i++) {
-		//output << employees[i]->toString() << "\n";
-		
-		switch(employees[i]->getType()) {
-		case SALARIED 	: output << *((SalariedEmployee*) employees[i]) << "\n"; break;
-		case HOURLY		: output << *((HourlyEmployee*) employees[i]) << "\n"; break;
-		case COMMISSION	: output << *((CommissionEmployee*) employees[i]) << "\n"; break;
-		}
+		output << employees[i]->toString() << "\n";
 	}
 	return output.str();
 }
@@ -116,11 +110,7 @@ bool Payroll::savePayroll(string filename) const {
 	if (myFile.is_open()) {
 		myFile << count << "\n";
 		for (uint i = 0; i < count; i++) {
-			switch(employees[i]->getType()) {
-				case SALARIED 	: myFile << *((SalariedEmployee*) employees[i]) << "\n"; break;
-				case HOURLY		: myFile << *((HourlyEmployee*) employees[i]) << "\n"; break;
-				case COMMISSION	: myFile << *((CommissionEmployee*) employees[i]) << "\n"; break;
-			}
+			myFile << employees[i]->toString() << "\n";
 		}
 		myFile.close();
 		return true;
