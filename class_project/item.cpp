@@ -10,16 +10,16 @@
 *************************************************************/
 #include "item.h"
 
-Item::Item() 
+Item::Item()
 	: type(NONE), id(0), title("noname"), year(0), borrowed(false) {
 }
 
-Item::Item(ItemType it, uint i, std::string n, int y, bool b) 
+Item::Item(ItemType it, uint i, std::string n, int y, bool b)
 	: type(it), id(i), title(n), year(y), borrowed(b) {
 }
 
 Item::Item(const Item &item)
-	: type(item.type), id(item.id), title(item.title), 
+	: type(item.type), id(item.id), title(item.title),
 		year(item.year), borrowed(item.borrowed) {
 }
 

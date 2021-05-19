@@ -7,6 +7,9 @@
 * All Rights Reserved. May be reproduced for any non-commercial
 * purpose.
 *************************************************************/
+#ifndef ITEM_H
+#define ITEM_H
+
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -39,3 +42,5 @@ public:
 
 	std::string toString() const;
 };
+
+#endif
