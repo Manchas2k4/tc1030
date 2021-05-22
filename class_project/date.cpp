@@ -20,17 +20,17 @@ Date::Date(uchar d, uchar m, int y) {
 	day = checkDay(d);
 }
 
-Date::Date(const Date &date) 
+Date::Date(const Date &date)
 	: day(date.day), month(date.month), year(date.year) {
 }
 
 uchar Date::checkDay(uchar d) const {
 	uchar limit;
 
-	if (month == 1 || month == 3 || month == 5 || month == 7 || 
+	if (month == 1 || month == 3 || month == 5 || month == 7 ||
 			month == 8 || month == 10 || month == 12) {
 		limit = 31;
-	} else if (month == 4 || month == 6 || month == 9 || 
+	} else if (month == 4 || month == 6 || month == 9 ||
 						 month == 11) {
 		limit = 30;
 	} else {
@@ -57,7 +57,7 @@ int Date::checkYear(int y) const {
 	}
 
 	year = (y != 0)? calculaAlgo(1, 3) : otroMetodo(59);
-	*/ 
+	*/
 	return (y != 0)? y : 1;
 }
 
@@ -90,8 +90,8 @@ void Date::setYear(int y) {
 std::string Date::toString() const {
 	std::stringstream aux;
 
-	aux << std::setw(2) << std::setfill('0') << (int) day << "/" 
-			<< std::setw(2) << std::setfill('0') << (int) month << "/" 
+	aux << std::setw(2) << std::setfill('0') << (int) day << "/"
+			<< std::setw(2) << std::setfill('0') << (int) month << "/"
 			<< std::setw(4) << std::setfill('0') << year;
 	return aux.str();
 }
