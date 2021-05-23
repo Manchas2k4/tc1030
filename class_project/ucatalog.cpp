@@ -1,7 +1,7 @@
 /*************************************************************
 * File: ucatalog.h
 * Author: Pedro Perez
-* Description: This file contains the implementation of 
+* Description: This file contains the implementation of
 *							 UserCatalog class.
 *
 * Copyright (c) 2021 by Tecnologico de Monterrey.
@@ -16,7 +16,7 @@ UserCatalog::UserCatalog() {
 	users = new User*[max];
 }
 
-UserCatalog::UserCatalog(unint m) {
+UserCatalog::UserCatalog(uint m) {
 	max = m;
 	current = 0;
 	users = new User*[max];
@@ -25,10 +25,10 @@ UserCatalog::UserCatalog(unint m) {
 UserCatalog::UserCatalog(const UserCatalog &uc) {
 	max = uc.max;
 	current = uc.current;
-	
+
 	users = new User*[max];
 	for (int i = 0; i < current; i++) {
-		users[i] = new User(uc.users[i]);
+		users[i] = new User( (*uc.users[i]) );
 	}
 }
 
@@ -65,7 +65,7 @@ User* UserCatalog::getUserById(uint id) const {
 void UserCatalog::addUser(User *u) {
 	long pos;
 
-	pos = indexOf(iu->getId());
+	pos = indexOf(u->getId());
 
 	if (pos == -1) {
 		users[current] = u;
@@ -105,8 +105,10 @@ bool UserCatalog::load(std::string filename) {
 
 	users = new User*[max];
 	for (int i = 0; i < current; i++) {
-
+		getline(file, input);
+		users[i] = new User(input);
 	}
+	return true;
 }
 
 bool UserCatalog::save(std::string filename) const {
@@ -121,4 +123,5 @@ bool UserCatalog::save(std::string filename) const {
 	for (int i = 0; i < current; i++) {
 		file << users[i]->toString() << "\n";
 	}
+	return true;
 }

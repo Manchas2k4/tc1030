@@ -1,7 +1,7 @@
 /*************************************************************
 * File: ucatalog.h
 * Author: Pedro Perez
-* Description: This file contains the definition of UserCatalog 
+* Description: This file contains the definition of UserCatalog
 *							 class.
 *
 * Copyright (c) 2021 by Tecnologico de Monterrey.
@@ -14,13 +14,13 @@
 #include <iostream>
 #include <fstream> // files
 #include <sstream>
-#include "types.h"
+#include "utils.h"
 #include "user.h"
 
 const int MAX = 100;
 
 class UserCatalog {
-private: 
+private:
 	User** users;
 	uint current, max;
 
@@ -28,18 +28,18 @@ private:
 
 public:
 	UserCatalog();
-	UserCatalog(unint);
+	UserCatalog(uint);
 	UserCatalog(const UserCatalog&);
 
 	~UserCatalog();
 
 	User* getUserById(uint) const;
 	void addUser(User*);
-	bool removeUserById(uint); 
+	bool removeUserById(uint);
 	bool changeUser(User*);
 
-	void load(std::string);
-	void save(std::string) const;
+	bool load(std::string);
+	bool save(std::string) const;
 };
 
 #endif

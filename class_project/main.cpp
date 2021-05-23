@@ -8,25 +8,17 @@
 * purpose.
 *************************************************************/
 #include <iostream>
-#include "item.h"
-#include "date.h"
+#include <vector>
+#include "utils.h"
+#include "user.h"
+//#include "date.h"
 
 int main() {
-	Item a;
-  Item b(BOOK, 1, "El Ingenioso hidalgo Don Quixote de la Manchas", 2020, false);
-	Item c(b);
+	std::string input;
+	User a;
 
-	std::cout << "item = " << a.toString() << "\n";
-	std::cout << "item = " << b.toString() << "\n";
-	std::cout << "item = " << c.toString() << "\n";
-
-	Date x;
-	Date y(32, 2, 1900);
-	Date z(y);
-
-	std::cout << "date = " << x.toString() << "\n";
-	std::cout << "date = " << y.toString() << "\n";
-	std::cout << "date = " << z.toString() << "\n";
-
+	getline(std::cin, input);
+	a = User(input);
+	std::cout << a.toString();
 	return 0;
 }

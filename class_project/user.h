@@ -14,7 +14,8 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-#include "types.h"
+#include <vector>
+#include "utils.h"
 
 #define MAXBORROWEDITEMS  5
 
@@ -29,6 +30,7 @@ public:
   User();
   User(uint, std::string);
   User(uint, std::string, uint, double);
+  User(std::string);
   User(const User&);
 
   uint getId() const;

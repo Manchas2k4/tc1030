@@ -22,6 +22,16 @@ User::User(uint i, std::string n, uint a, double f)
   : id(i), name(n), amountBorrowedItems(a), fine(f) {
 }
 
+User::User(std::string line) {
+  std::vector<std::string> result;
+
+  result = split(line);
+  id = stoi(result[0]);
+  name = result[1];
+  amountBorrowedItems = stoi(result[2]);
+  fine = stod(result[3]);
+}
+
 User::User(const User &u)
   : id(u.id), name(u.name),
     amountBorrowedItems(u.amountBorrowedItems), fine(u.fine) {
