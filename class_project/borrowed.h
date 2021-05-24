@@ -12,10 +12,7 @@
 #ifndef BORROWED_H
 #define BORROWED_H
 
-#include <iostream>
-#include <string>
-#include <sstream>
-#include "types.h"
+#include "utils.h"
 #include "date.h"
 
 class BorrowedItem {

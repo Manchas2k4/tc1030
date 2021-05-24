@@ -10,15 +10,25 @@
 #include <iostream>
 #include <vector>
 #include "utils.h"
-#include "user.h"
+#include "ucatalog.h"
 //#include "date.h"
 
 int main() {
-	std::string input;
-	User a;
+	UserCatalog uc(1);
+	UserCatalog uc2(1);
 
-	getline(std::cin, input);
-	a = User(input);
-	std::cout << a.toString();
+	uc.addUser(new User(1, "Juan Hernandez"));
+	std::cout << uc.toString();
+
+	uc.addUser(new User(2, "Luis Hernandez"));
+	std::cout << uc.toString();
+
+	uc.addUser(new User(3, "Otto Kuate"));
+	std::cout << uc.toString();
+
+	uc.save("users.txt");
+
+	uc2.load("users.txt");
+	std::cout << uc2.toString();
 	return 0;
 }

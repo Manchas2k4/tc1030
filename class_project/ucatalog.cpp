@@ -11,32 +11,29 @@
 #include "ucatalog.h"
 
 UserCatalog::UserCatalog() {
-	max = MAX;
+	limit = MAXSIZE;
 	current = 0;
-	users = new User*[max];
+	users = new User*[limit];
 }
 
 UserCatalog::UserCatalog(uint m) {
-	max = m;
+	limit = m;
 	current = 0;
-	users = new User*[max];
+	users = new User*[limit];
 }
 
 UserCatalog::UserCatalog(const UserCatalog &uc) {
-	max = uc.max;
+	limit = uc.limit;
 	current = uc.current;
 
-	users = new User*[max];
+	users = new User*[limit];
 	for (int i = 0; i < current; i++) {
 		users[i] = new User( (*uc.users[i]) );
 	}
 }
 
 UserCatalog::~UserCatalog() {
-	for (int i = 0; i < current; i++) {
-		delete users[i];
-	}
-	delete [] users;
+	clear();
 }
 
 long UserCatalog::indexOf(uint id) const {
@@ -62,15 +59,28 @@ User* UserCatalog::getUserById(uint id) const {
 	}
 }
 
-void UserCatalog::addUser(User *u) {
+bool UserCatalog::addUser(User *u) {
 	long pos;
+	User** newUsers;
 
 	pos = indexOf(u->getId());
 
-	if (pos == -1) {
-		users[current] = u;
-		current++;
+	if (pos != -1) {
+		return false;
 	}
+
+	if (current == limit) {
+		limit = limit + ((limit * 3) / 2);
+		newUsers = new User*[limit];
+		for (int i = 0; i < current; i++) {
+			newUsers[i] = users[i];
+		}
+		delete [] users;
+		users = newUsers;
+	}
+	users[current] = u;
+	current++;
+	return true;
 }
 
 bool UserCatalog::removeUserById(uint id) {
@@ -90,7 +100,28 @@ bool UserCatalog::removeUserById(uint id) {
 	return true;
 }
 
-bool changeUser(User*);
+bool UserCatalog::changeUser(User *u) {
+	long pos;
+
+	pos = indexOf(u->getId());
+
+	if (pos == -1) {
+		return false;
+	}
+
+	users[pos] = u;
+	return true;
+}
+
+void UserCatalog::clear() {
+	for (int i = 0; i < current; i++) {
+		delete users[i];
+	}
+	delete [] users;
+	users = NULL;
+	limit = 0;
+	current = 0;
+}
 
 bool UserCatalog::load(std::string filename) {
 	std::ifstream file(filename);
@@ -100,10 +131,11 @@ bool UserCatalog::load(std::string filename) {
 		return false;
 	}
 
-	file >> max;
-	file >> current;
-
-	users = new User*[max];
+	clear();
+	file >> limit >> current;
+	file.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	std::cout << limit << "\n" << current << "\n";
+	users = new User*[limit];
 	for (int i = 0; i < current; i++) {
 		getline(file, input);
 		users[i] = new User(input);
@@ -118,10 +150,19 @@ bool UserCatalog::save(std::string filename) const {
 		return false;
 	}
 
-	file << max << "\n";
-	file << current << "\n";
+	file << limit << "\n" << current << "\n";
 	for (int i = 0; i < current; i++) {
 		file << users[i]->toString() << "\n";
 	}
 	return true;
+}
+
+std::string UserCatalog::toString() const {
+	std::stringstream aux;
+
+	aux << limit << "\n" << current << "\n";
+	for (int i = 0; i < current; i++) {
+		aux << users[i]->toString() << "\n";
+	}
+	return aux.str();
 }

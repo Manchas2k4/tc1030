@@ -11,13 +11,7 @@
 #ifndef USER_H
 #define USER_H
 
-#include <iostream>
-#include <string>
-#include <sstream>
-#include <vector>
 #include "utils.h"
-
-#define MAXBORROWEDITEMS  5
 
 class User {
 private:

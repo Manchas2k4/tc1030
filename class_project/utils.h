@@ -12,13 +12,20 @@
 #define UTILS_H
 
 #include <iostream>
-#include <vector>
+#include <string>
+#include <iomanip>
+#include <fstream> // files
 #include <sstream>
+#include<limits>
+#include <vector>
 
 typedef unsigned int uint;
 typedef unsigned char uchar;
 
 typedef enum {NONE, BOOK, SCROLL, ORB} ItemType;
+
+const int MAXSIZE = 100;
+const int MAXBORROWEDITEMS = 5;
 
 std::vector<std::string> split(std::string, char sep=',');
 

@@ -10,10 +10,7 @@
 #ifndef DATE_H
 #define DATE_H
 
-#include <string>
-#include <sstream>
-#include <iomanip>
-#include "types.h"
+#include "utils.h"
 
 class Date {
 private:
@@ -36,7 +33,7 @@ public:
 	void setDay(uchar);
 	void setMonth(uchar);
 	void setYear(int);
-	
+
 	std::string toString() const;
 };
 

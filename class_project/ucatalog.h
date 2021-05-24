@@ -11,18 +11,13 @@
 #ifndef UCATALOG_H
 #define UCATALOG_H
 
-#include <iostream>
-#include <fstream> // files
-#include <sstream>
 #include "utils.h"
 #include "user.h"
-
-const int MAX = 100;
 
 class UserCatalog {
 private:
 	User** users;
-	uint current, max;
+	uint current, limit;
 
 	long indexOf(uint) const;
 
@@ -34,12 +29,15 @@ public:
 	~UserCatalog();
 
 	User* getUserById(uint) const;
-	void addUser(User*);
+	bool addUser(User*);
 	bool removeUserById(uint);
 	bool changeUser(User*);
 
+	void clear();
 	bool load(std::string);
 	bool save(std::string) const;
+
+	std::string toString() const;
 };
 
 #endif
