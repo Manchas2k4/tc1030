@@ -24,6 +24,15 @@ Date::Date(const Date &date)
 	: day(date.day), month(date.month), year(date.year) {
 }
 
+Date::Date(std::string line) {
+	std::vector<std::string> result;
+
+	result = split(line, '/');
+  day = (uchar) stoi(result[0]);
+  month = (uchar) stoi(result[1]);
+  year = stoi(result[2]);
+}
+
 uchar Date::checkDay(uchar d) const {
 	uchar limit;
 

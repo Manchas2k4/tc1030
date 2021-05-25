@@ -24,6 +24,7 @@ private:
 public:
 	Date();
 	Date(uchar, uchar, int);
+	Date(std::string);
 	Date(const Date&);
 
 	uchar getDay() const;

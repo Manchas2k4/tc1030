@@ -24,8 +24,8 @@ typedef unsigned char uchar;
 
 typedef enum {NONE, BOOK, SCROLL, ORB} ItemType;
 
-const int MAXSIZE = 100;
-const int MAXBORROWEDITEMS = 5;
+#define MAXSIZE     100
+#define MAXBITEMS   5
 
 std::vector<std::string> split(std::string, char sep=',');
 

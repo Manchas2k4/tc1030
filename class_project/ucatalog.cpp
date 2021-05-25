@@ -134,7 +134,6 @@ bool UserCatalog::load(std::string filename) {
 	clear();
 	file >> limit >> current;
 	file.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	std::cout << limit << "\n" << current << "\n";
 	users = new User*[limit];
 	for (int i = 0; i < current; i++) {
 		getline(file, input);

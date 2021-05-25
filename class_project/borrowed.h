@@ -25,6 +25,7 @@ private:
 public:
   BorrowedItem();
   BorrowedItem(uint, uint, const Date&, uint);
+  BorrowedItem(std::string);
   BorrowedItem(const BorrowedItem&);
 
   uint getUserId() const;

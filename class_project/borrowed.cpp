@@ -23,6 +23,16 @@ BorrowedItem::BorrowedItem(const BorrowedItem &b)
     startDate(b.startDate), maximumDays(b.maximumDays) {
 }
 
+BorrowedItem::BorrowedItem(std::string line) {
+  std::vector<std::string> result;
+
+  result = split(line);
+  userId = (uint) stol(result[0]);
+  itemId = (uint) stol(result[1]);
+  startDate = Date(result[2]);
+  maximumDays = (uint) stol(result[3]);
+}
+
 uint BorrowedItem::getUserId() const {
     return userId;
 }

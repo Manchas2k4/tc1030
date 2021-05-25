@@ -1,5 +1,5 @@
-all: utils.o date.o item.o user.o ucatalog.o borrowed.o main.o
-	g++ utils.o date.o item.o user.o ucatalog.o borrowed.o main.o -o app
+all: utils.o date.o item.o user.o ucatalog.o borrowed.o bcatalog.o main.o
+	g++ utils.o date.o item.o user.o ucatalog.o borrowed.o bcatalog.o main.o -o app
 
 utils.o: utils.h utils.cpp
 	g++ -c utils.cpp
@@ -18,6 +18,9 @@ ucatalog.o: ucatalog.h ucatalog.cpp
 
 borrowed.o: borrowed.h borrowed.cpp
 	g++ -c borrowed.cpp
+
+bcatalog.o: bcatalog.h bcatalog.cpp
+	g++ -c bcatalog.cpp
 
 main.o: main.cpp
 	g++ -c main.cpp

@@ -26,9 +26,9 @@ User::User(std::string line) {
   std::vector<std::string> result;
 
   result = split(line);
-  id = stoi(result[0]);
+  id = (uint) stol(result[0]);
   name = result[1];
-  amountBorrowedItems = stoi(result[2]);
+  amountBorrowedItems = (uint) stol(result[2]);
   fine = stod(result[3]);
 }
 
