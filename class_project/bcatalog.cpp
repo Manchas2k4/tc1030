@@ -1,5 +1,5 @@
 /*************************************************************
-* File: bcatalog.h
+* File: bcatalog.cpp
 * Author: Pedro Perez
 * Description: This file contains the implementation of
 *							 BorrowedCatalog class.

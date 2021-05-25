@@ -23,6 +23,7 @@ protected:
 public:
 	Item();
 	Item(ItemType, uint, std::string, int, bool);
+	Item(std::string);
 	Item(const Item&);
 
 	ItemType getType() const;

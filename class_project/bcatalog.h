@@ -1,5 +1,5 @@
 /*************************************************************
-* File: user.h
+* File: bcatalog.h
 * Author: Pedro Perez
 * Description: This file contains the definition of
 *              BorrowedCatalog class.

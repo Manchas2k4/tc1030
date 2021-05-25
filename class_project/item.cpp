@@ -23,6 +23,24 @@ Item::Item(const Item &item)
 		year(item.year), borrowed(item.borrowed) {
 }
 
+Item::Item(std::string line)  {
+	std::vector<std::string> result;
+	uint t;
+
+  result = split(line);
+	t = (uint) stol(result[0]);
+	switch(t) {
+		case 0 : type = NONE; break;
+		case 1 : type = BOOK; break;
+		case 2 : type = SCROLL; break;
+		case 3 : type = ORB; break;
+	}
+	id = (uint) stol(result[1]);
+  title = result[2];
+	year = stoi(result[3]);
+	borrowed = (bool) stoi(result[4]);
+}
+
 ItemType Item::getType() const {
 	return type;
 }
