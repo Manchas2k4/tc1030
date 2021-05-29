@@ -16,11 +16,18 @@
 class Hero : public Character {
 private:
 	int bonusShield, used;
+	int treasure;
 
 public:
 	Hero();
 	Hero(std::string, int, int, int, int);
 	Hero(const Hero&);
+
+	int getTreasure() const;
+
+	void setTreasure(int);
+
+	void addTreasure(unsigned int);
 
 	int defense();
 };
