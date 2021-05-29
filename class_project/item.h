@@ -14,14 +14,15 @@
 
 class Item {
 protected:
-	ItemType 	type;
-	uint 			id;
-	std::string		title;
-	int				year;
-	bool			borrowed;
+	ItemType 		type;
+	uint 				id;
+	std::string	title;
+	int					year;
+	bool				borrowed;
 
 public:
 	Item();
+	Item(ItemType);
 	Item(ItemType, uint, std::string, int, bool);
 	Item(std::string);
 	Item(const Item&);

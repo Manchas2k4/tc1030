@@ -14,6 +14,10 @@ Item::Item()
 	: type(NONE), id(0), title("noname"), year(0), borrowed(false) {
 }
 
+Item::Item(ItemType it)
+	: type(it), id(0), title("noname"), year(0), borrowed(false) {
+}
+
 Item::Item(ItemType it, uint i, std::string n, int y, bool b)
 	: type(it), id(i), title(n), year(y), borrowed(b) {
 }
