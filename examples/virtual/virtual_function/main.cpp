@@ -10,7 +10,7 @@ int main(int argc, char* argv[]) {
 	Enemy *enemy;
 	Hero h("The Migthy Akator", 3, 3, 2, 6);
 	std::string name = "Enemy Lvl. ";
-	int level, count;
+	int level, count, op;
 
 	srand(time(0));
 
@@ -18,7 +18,7 @@ int main(int argc, char* argv[]) {
 	count = 0;
 	enemy = new Enemy(name + std::to_string(level), level, level,
 										level * 10);
-	while(h.isAlive()) {
+	while(h.isAlive() && op != 0) {
 		while (h.isAlive() && enemy->isAlive()) {
 			if (enemy->attack() > h.defense()) {
 				std::cout << enemy->getDescription() << " has attacked\n";
@@ -57,6 +57,10 @@ int main(int argc, char* argv[]) {
 		} else {
 			std::cout << "\n" << enemy->getDescription() << " wins\n\n";
 		}
+		
+		std::cout << "Continue (0 = No, 1 = Yes)?";
+		std::cin >> op;
+		
 	}
 
 	std::cout << "OMG! The final treasure of " << h.getDescription()
