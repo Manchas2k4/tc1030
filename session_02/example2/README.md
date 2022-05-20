@@ -3,7 +3,7 @@
 # implementación de números racionales
 
 ## <span style="color: rgb(26, 99, 169);">Introducción</span>
-Los números racionales son todos los números que pueden representarse como el cociente de dos números enteros o, más exactamente, un entero y un natural positivo;​ es decir, una fracción común $\frac{a}{b}$ con numerador $a$ y denominador $b$  distinto de cero. El término *racional* alude a una fracción o parte de un todo.
+Los números racionales son todos los números que pueden representarse como el cociente de dos números enteros o, más exactamente, un entero y un natural positivo;​ es decir, una fracción común $\frac{a}{b}$ con numerador $a$ y denominador $b$  distinto de cero. El término *racional* alude a una fracción o parte de un todo. ([Wikipedia](https://es.wikipedia.org/wiki/N%C3%BAmero_racional).)
 
 En este ejercicio, implementaremos una clase que nos permita manejar números racionales en C/C++.
 
