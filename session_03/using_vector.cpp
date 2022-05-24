@@ -17,8 +17,14 @@ double averagePerimeter(const vector<Circle> &circles) {
 }
 
 void duplicateRadius(vector<Circle> &circles) {
+  /*
   for (int i = 0; i < circles.size(); i++) {
     circles[i].setRadius(circles[i].getRadius() * 2);
+  }
+  */
+  vector<Circle>::iterator itr;
+  for (itr = circles.begin(); itr != circles.end(); itr++) {
+    itr->setRadius(itr->getRadius() * 2);
   }
 }
 
