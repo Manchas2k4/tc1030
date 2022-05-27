@@ -10,11 +10,11 @@ int main(int argc, char* argv[]) {
 	}
 	cout << "\n";
 
-	int* p = &arr[0];
+	int *p = &arr[0]; //int *p = arr;
 	bool finished = false;
-	while(finished == false) {
-		cout << (*p) << " ";
-		if (p == &arr[9]) {
+	while(p <= &arr[9] && !finished) {
+		cout << "dir =" << p << ":" << (*p) << "\n";
+		if (*p == 100) {
 			finished = true;
 		}
 		p++;

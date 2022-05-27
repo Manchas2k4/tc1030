@@ -5,7 +5,7 @@
 
 using namespace std;
 
-const int PI = 3.14159265;
+const double PI = 3.14159265;
 const int RECTS = 100000000; //1e9
 
 double linear(double x) {

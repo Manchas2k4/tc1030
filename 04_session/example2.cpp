@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <ctime>
 
-const int SIZE = 1000000000;
+const int SIZE = 1000000000; //1e9
 
 int main(int argc, char* argv[]) {
 	int data[SIZE];
