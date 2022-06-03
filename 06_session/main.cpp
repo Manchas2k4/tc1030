@@ -12,8 +12,8 @@ int main(int argc, char* argv[]) {
 	Rectangle c(10, 20);
 	Square d(50);
 
-	cout << "A type = " << a.getType() << " perimeter = " << a.getPerimeter() << " area = " << a.getArea() << "\n";
-	cout << "B type = " << b.getType() << " perimeter = " << b.getPerimeter() << " area = " << b.getArea() << "\n";
-	cout << "C type = " << c.getType() << " perimeter = " << c.getPerimeter() << " area = " << c.getArea() << "\n";
-	cout << "D type = " << d.getType() << " perimeter = " << d.getPerimeter() << " area = " << d.getArea() << "\n";
+	cout << "A " << a.toString() << "\n";
+	cout << "B " << b.toString() << "\n";
+	cout << "C " << c.toString() << "\n";
+	cout << "D " << d.toString() << "\n";
 }

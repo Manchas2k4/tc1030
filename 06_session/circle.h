@@ -18,7 +18,6 @@ class Circle : public Figure {
 protected:
 	double radius;
 
-
 public:
 	Circle();
   Circle(double);
