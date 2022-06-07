@@ -1,0 +1,6 @@
+Trader 0: 0.00$ 0.00PQ
+Trader 1: 100.00$ 45.00PQ
+Trader 2: 124.00$ 21.00PQ
+Trader 3: 130.00$ 42.00PQ
+Trader 4: 65.00$ 44.00PQ
+Trader 5: 34.00$ 150.00PQ
