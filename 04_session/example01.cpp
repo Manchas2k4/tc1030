@@ -7,7 +7,8 @@ int main(int argc, char* argv[]) {
 	std::cout << "var = " << var << "\n";
 	std::cout << "var address = " << &var << "\n";
 	std::cout << "p = " << p << "\n";
-
+	std::cout << "value of p = " << (*p) << "\n";
+	
 	var = var + 10;
 
 	std::cout << "var = " << var << "\n";

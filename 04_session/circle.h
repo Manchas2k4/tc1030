@@ -36,8 +36,8 @@ Circle::Circle() {
   radius = 1;
 }
 
-Circle::Circle(int r) {
-  radius = r;
+Circle::Circle(int radius) {
+  this->radius = radius;
 }
 
 Circle::Circle(const Circle &c) {

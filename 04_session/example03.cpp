@@ -10,9 +10,8 @@ int main(int argc, char* argv[]) {
 	data = new int[SIZE];
 
 	std::cout << "Initializing the data...\n";
-	srand(time(0));
 	for (int i = 0; i < SIZE; i++) {
-		data[i] = (rand() % 100) + 1;
+		data[i] = 0;
 	}
 	
 	std::cout << "Displaying the data...\n";
