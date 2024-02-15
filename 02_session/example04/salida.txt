@@ -1,3 +1,0 @@
-Oldest: Donald,77
-Youngest: Hugo,10
-Average: 22.60

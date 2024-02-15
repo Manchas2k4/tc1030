@@ -7,9 +7,6 @@
 #ifndef RATIONAL_H
 #define RATIONAL_H
 
-#include <iostream>
-
-// https://github.com/Manchas2k4/tc1030/
 class Rational {
 private:
   int numerator, denominator;
@@ -22,20 +19,17 @@ public:
 
   int getNumerator() const;
   int getDenominator() const;
+
   void setNumerator(int);
   void setDenominator(int);
 
-  Rational operator+(const Rational&);
-  Rational operator+(const int);
-  Rational operator-(const Rational&);
-  Rational operator-(const int);
-  Rational operator*(const Rational&);
-  Rational operator*(const int);
-  Rational operator/(const Rational&);
-  Rational operator/(const int);
+  Rational add(const Rational&);
+  Rational sub(const Rational&);
+  Rational mult(const Rational&);
+  Rational div(const Rational&);
 
-  bool operator==(const Rational&);
-  bool operator<(const Rational&);
+  bool equals(const Rational&);
+  bool less(const Rational&);
 };
 
 Rational::Rational() {
@@ -73,92 +67,5 @@ void Rational::setNumerator(int num) {
 void Rational::setDenominator(int den) {
   denominator = den;
 }
-
-Rational Rational::operator+(const Rational &right) {
-  int num, den;
-
-  den = denominator * right.denominator;
-  num = (numerator * right.denominator) + (denominator * right.numerator);
-
-  return Rational(num, den);
-}
-
-Rational Rational::operator+(const int number) {
-  Rational right(number);
-
-  return (*this) + right;
-}
-
-Rational Rational::operator-(const Rational &right) {
-  int num, den;
-
-  den = denominator * right.denominator;
-  num = (numerator * right.denominator) - (denominator * right.numerator);
-
-  return Rational(num, den);
-}
-
-Rational Rational::operator-(const int number) {
-  Rational right(number);
-
-  return (*this) - right;
-}
-
-Rational Rational::operator*(const Rational &right) {
-  int num, den;
-
-  num = numerator * right.numerator;
-  den = denominator * right.denominator;
-
-  return Rational(num, den);
-}
-
-Rational Rational::operator*(const int number) {
-  Rational right(number);
-
-  return (*this) * right;
-}
-
-Rational Rational::operator/(const Rational &right) {
-  int num, den;
-
-  num = numerator * right.denominator;
-  den = denominator * right.numerator;
-
-  return Rational(num, den);
-}
-
-Rational Rational::operator/(const int number) {
-  Rational right(number);
-
-  return (*this) / right;
-}
-
-bool Rational::operator==(const Rational &right) {
-  int a, b;
-
-  a = numerator * right.denominator;
-  b = denominator * right.numerator;
-
-  return (a == b);
-}
-
-bool Rational::operator<(const Rational &right) {
-  int a, b;
-
-  a = numerator * right.denominator;
-  b = denominator * right.numerator;
-
-  return (a < b);
-}
-
-std::ostream& operator<<(std::ostream &out, const Rational &obj){
-  out << obj.getNumerator() << "/" << obj.getDenominator();
-  return out;
-}
-
-
-
-
 
 #endif
