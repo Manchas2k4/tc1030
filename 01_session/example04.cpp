@@ -3,18 +3,33 @@
 
 using namespace std;
 
-void display() {
-    cout << "hola\n";
-    return;
-    cout << "adios\n";
+void swap(int &a, int &b) {
+	int aux;
+	
+	aux = a;
+	a = b;
+	b = aux;
+	cout << "a = " << a << " b = " << b << "\n";
+}
+
+void swap(float &a, float &b) {
+	float aux;
+	
+	aux = a;
+	a = b;
+	b = aux;
+	cout << "a = " << a << " b = " << b << "\n";
 }
 
 int main(int argc, char* argv[]) {
-    for (int i = 0; i < argc; i++) {
-        cout << "argv[" << i << "] :" << argv[i] << "\n";
-    }
-
-    display();
-    return 0;
+	int x = 10;
+	int y = 5;
+	
+	cout << "x = " << x << " y = " << y << "\n";
+	
+	swap(x, y);
+	
+	cout << "x = " << x << " y = " << y << "\n";
+	
+	return 0;
 }
-
