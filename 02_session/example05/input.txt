@@ -1,0 +1,7 @@
+6
+Hugo 10
+Paco 12
+Luis 13
+Juan 13
+Maria 24
+Lorena 1 
