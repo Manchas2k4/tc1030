@@ -12,5 +12,11 @@ int main(int argc, char* argv[]) {
   }
   cout << "\n";
 
+  try {
+    v[1000] = 10;
+  } catch (Exception e) {
+    cout << e.what();
+  }
+
   return 0;
 }
