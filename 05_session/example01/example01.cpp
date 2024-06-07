@@ -12,21 +12,21 @@ int main(int argc, char* argv[]) {
 	Rational e(-1, -3);
 	Rational f(c);
 	
-	cout << "a: "; a.display(); cout << "\n";
-	cout << "b: "; b.display(); cout << "\n";
-	cout << "c: "; c.display(); cout << "\n";
-	cout << "d: "; d.display(); cout << "\n";
-	cout << "e: "; e.display(); cout << "\n";
-	cout << "f: "; f.display(); cout << "\n";
+	cout << "a: " << a << "\n";
+	cout << "b: " << b << "\n";
+	cout << "c: " << c << "\n";
+	cout << "d: " << d << "\n";
+	cout << "e: " << e << "\n";
+	cout << "f: " << f << "\n";
 	
 	Rational z;
-	z = c.add(e);
-	cout << "z: "; z.display(); cout << "\n";
-	z = c.sub(e);
-	cout << "z: "; z.display(); cout << "\n";
+	z = c + e;
+	cout << "z: " << z << "\n";
+	z = c - e;
+	cout << "z: " << z << "\n";
 	
-	cout << "equal? " << c.equals(e) << "\n";
-	cout << "equal? " << c.equals(d) << "\n";
+	cout << "equal? " << (c == e) << "\n";
+	cout << "equal? " << (c == d) << "\n";
 	
 	return 0;
 }

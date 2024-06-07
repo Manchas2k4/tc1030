@@ -8,15 +8,11 @@
 #define RATIONAL_H
 
 #include <iostream>
-#include <algorithm> 
 
-using namespace std;
-
+// https://github.com/Manchas2k4/tc1030/
 class Rational {
 private:
   int numerator, denominator;
-
-  void simplify();
 
 public:
   Rational();
@@ -26,17 +22,20 @@ public:
 
   int getNumerator() const;
   int getDenominator() const;
-
   void setNumerator(int);
   void setDenominator(int);
 
-  Rational operator+(const Rational&) const;
-  Rational operator-(const Rational&) const;
-  Rational operator*(const Rational&) const;
-  Rational operator/(const Rational&) const;
+  Rational operator+(const Rational&);
+  Rational operator+(const int);
+  Rational operator-(const Rational&);
+  Rational operator-(const int);
+  Rational operator*(const Rational&);
+  Rational operator*(const int);
+  Rational operator/(const Rational&);
+  Rational operator/(const int);
 
-  bool operator==(const Rational&) const;
-  bool operator<(const Rational&) const;
+  bool operator==(const Rational&);
+  bool operator<(const Rational&);
 };
 
 Rational::Rational() {
@@ -52,32 +51,11 @@ Rational::Rational(int num) {
 Rational::Rational(int num, int den) {
   numerator = num;
   denominator = den;
-  simplify();
 }
 
 Rational::Rational(const Rational &right) {
   numerator = right.numerator;
   denominator = right.denominator;
-}
-
-void Rational::simplify() {
-  int sign, divisor;
-  
-  sign = 1;
-  if (numerator < 0) {
-    numerator *= -1;
-    sign *= -1;
-  }
-
-  if (denominator < 0) {
-    denominator *= -1;
-    sign *= -1;
-  }
-
-  divisor = __gcd(numerator, denominator);
-
-  numerator = (numerator / divisor) * sign;
-  denominator /= divisor;
 }
 
 int Rational::getNumerator() const {
@@ -96,7 +74,7 @@ void Rational::setDenominator(int den) {
   denominator = den;
 }
 
-Rational Rational::operator+(const Rational &right) const {
+Rational Rational::operator+(const Rational &right) {
   int num, den;
 
   den = denominator * right.denominator;
@@ -105,7 +83,13 @@ Rational Rational::operator+(const Rational &right) const {
   return Rational(num, den);
 }
 
-Rational Rational::operator-(const Rational &right) const {
+Rational Rational::operator+(const int number) {
+  Rational right(number);
+
+  return (*this) + right;
+}
+
+Rational Rational::operator-(const Rational &right) {
   int num, den;
 
   den = denominator * right.denominator;
@@ -114,7 +98,13 @@ Rational Rational::operator-(const Rational &right) const {
   return Rational(num, den);
 }
 
-Rational Rational::operator*(const Rational &right) const {
+Rational Rational::operator-(const int number) {
+  Rational right(number);
+
+  return (*this) - right;
+}
+
+Rational Rational::operator*(const Rational &right) {
   int num, den;
 
   num = numerator * right.numerator;
@@ -123,7 +113,13 @@ Rational Rational::operator*(const Rational &right) const {
   return Rational(num, den);
 }
 
-Rational Rational::operator/(const Rational &right) const {
+Rational Rational::operator*(const int number) {
+  Rational right(number);
+
+  return (*this) * right;
+}
+
+Rational Rational::operator/(const Rational &right) {
   int num, den;
 
   num = numerator * right.denominator;
@@ -132,7 +128,13 @@ Rational Rational::operator/(const Rational &right) const {
   return Rational(num, den);
 }
 
-bool Rational::operator==(const Rational &right) const {
+Rational Rational::operator/(const int number) {
+  Rational right(number);
+
+  return (*this) / right;
+}
+
+bool Rational::operator==(const Rational &right) {
   int a, b;
 
   a = numerator * right.denominator;
@@ -141,7 +143,7 @@ bool Rational::operator==(const Rational &right) const {
   return (a == b);
 }
 
-bool Rational::operator<(const Rational &right) const {
+bool Rational::operator<(const Rational &right) {
   int a, b;
 
   a = numerator * right.denominator;
@@ -150,8 +152,13 @@ bool Rational::operator<(const Rational &right) const {
   return (a < b);
 }
 
-ostream& operator<< (ostream& out, const Rational &r) {
-  out << r.getNumerator() << "/" << r.getDenominator();
+std::ostream& operator<<(std::ostream &out, const Rational &obj){
+  out << obj.getNumerator() << "/" << obj.getDenominator();
   return out;
 }
+
+
+
+
+
 #endif

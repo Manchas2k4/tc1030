@@ -31,13 +31,10 @@ public:
 
     unsigned int length() const;
 
-    int at(unsigned int) const;
-    void set(unsigned int, int);
+    int& operator[](unsigned int);
 
     void resize(unsigned int);
     void resize(unsigned int, int);
-
-    void display() const;
 };
 
 // =================================================================
@@ -105,34 +102,8 @@ unsigned int Vector::length() const {
     return size;
 }
 
-// =================================================================
-// If the position is valid, returns the value found in the cell 
-// indicated by index.
-//
-// @param index The index of the cell.
-// @return      The value found in the cell.
-// =================================================================
-int Vector::at(unsigned int index) const {
-    if (index >= size) {
-        cout << "Error\n";
-        return -1;
-    }
+int& Vector::operator[](unsigned int index){
     return data[index];
-}
-
-// =================================================================
-// If the position is valid, change the value in the cell indicated 
-// by index.
-//
-// @param index The index of the cell.
-// @param val   The new value of the cell.
-// =================================================================
-void Vector::set(unsigned int index, int val) {
-    if (index >= size) {
-        cout << "Error\n";
-        return;
-    }
-    data[index] = val;
 }
 
 // =================================================================
@@ -201,15 +172,12 @@ void Vector::resize(unsigned int newSize, int val) {
     }
 }
 
-// =================================================================
-// Displays the content of the vector on the screen.
-// =================================================================
-void Vector::display() const {
-    cout << data[0];
-    for (unsigned int i = 1; i < size; i++) {
-        cout << " " << data[i];
+ostream& operator<< (ostream& out, Vector &v) {
+    out << v[0];
+    for (unsigned int i = 1; i < v.length(); i++) {
+        out << " " << v[i];
     }
-    cout << "\n";
+    return out;
 }
 #endif
 

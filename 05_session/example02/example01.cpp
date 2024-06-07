@@ -9,16 +9,16 @@ int main(int argc, char* argv[]) {
 	Vector b(10);
 	Vector c(5, -1);
 	
-	cout << "A: "; a.display();
-	cout << "B: "; b.display();
-	cout << "C: "; c.display();
+	cout << "A: " << a << "\n";
+	cout << "B: " << b << "\n";
+	cout << "C: " << c << "\n";
 	
-	cout << "B[3]: " << b.at(3) << "\n";
+	cout << "B[3]: " << b[3] << "\n";
 	
-	b.set(3, 400);
-	cout << "B: "; b.display();
+	b[3] = 400;
+	cout << "B: " << b << "\n";
 	
 	c.resize(10, 1);
-	cout << "C: "; c.display();
+	cout << "C: " << c << "\n";
 	return 0;
 }
