@@ -1,9 +1,4 @@
-// =========================================================
-// File: order.h
-// Author:
-// Date:
-// Description:
-// =========================================================
+// 1
 #ifndef ORDER_H
 #define ORDER_H
 
@@ -38,6 +33,60 @@ public:
   virtual bool operator<(const Order*) = 0;
   virtual bool operator<(const Order&) = 0;
 };
+
+Order::Order(int tID, double a, double p, OrderType t) {
+  traderId = tID;
+  amount = a;
+  price = p;
+  type = t;
+}
+
+Order::Order(const Order &order) {
+  traderId = order.traderId;
+  amount = order.amount;
+  price = order.price;
+  type = order.type;
+}
+
+int Order::getTraderId() const {
+  return traderId;
+}
+
+double Order::getAmount() const {
+  return amount;
+}
+
+double Order::getPrice() const {
+  return price;
+}
+
+OrderType Order::getType() const {
+  return type;
+}
+
+double Order::getDollars() const {
+  return amount * price;
+}
+
+std::string Order::toString() const {
+  std::stringstream aux;
+
+  aux << "TraderId " << traderId << ":"
+      << std::fixed << std::setprecision(2) << amount << "$ "
+      << std::fixed << std::setprecision(2) << price << "PQ";
+  return aux.str();
+}
+
+
+bool Order::operator==(const Order *right) {
+  return (type == right->type && traderId == right->traderId &&
+          amount == right->amount && price == right->price);
+}
+
+bool Order::operator==(const Order &right) {
+  return (type == right.type && traderId == right.traderId &&
+          amount == right.amount && price == right.price);
+}
 
 
 #endif
