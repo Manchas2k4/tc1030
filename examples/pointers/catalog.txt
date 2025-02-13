@@ -1,0 +1,61 @@
+15
+El Enigma del Desierto
+Maria Lopez
+250
+2 Mistery Adventure
+Luz y Sombra
+Juan Perez
+320
+2 Fantasy Scifi
+El Secreto de los Andes
+Ana Martinez
+280
+2 Adventure Mistery
+La Ciudad Perdida
+Jose Gomez
+290
+2 Scifi Adventure
+El Caballero de la Oscuridad
+Carlos Hernandez
+350
+2 Fantasy Mistery
+La ultima Frontera
+Laura Sanchez
+300
+2 Scifi Adventure
+El Valle de los Sueños
+Roberto Fernandez
+270
+2 Fantasy Adventure
+Sombras en la Niebla
+Gabriela Ruiz
+260
+2 Mistery Police
+La Nave Estelar
+Fernando Diaz
+340
+2 Scifi Fantasy
+El Asesino Invisible
+Claudia Castro
+380
+2 Mistery Police
+El Guardian del Bosque
+Luis Ramirez
+250
+2 Fantasy Adventure
+Codigo Omega
+Isabel Morales
+310
+2 Scifi Police
+La Isla del Tesoro Perdido
+Sergio Mendoza
+290
+2 Adventure Mistery
+El Portal de los Recuerdos
+Patricia Ortiz
+330
+2 Fantasy Scifi
+La Trampa de Cristal
+Alberto Navarro
+370
+2 Police Mistery
