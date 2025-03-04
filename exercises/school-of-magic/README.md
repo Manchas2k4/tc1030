@@ -111,12 +111,12 @@ Métodos Públicos:
         * launch() debe calcular correctamente la variabilidad en el daño. 
         * toString() debe devolver una representación precisa del estado del objeto. 
 2. Estilo de Codificación (40 puntos)
-    4. Nombres de Variables y Métodos (15 puntos):
+    1. Nombres de Variables y Métodos (15 puntos):
         * Los nombres de las variables y métodos deben ser claros, descriptivos y seguir las convenciones de nomenclatura. 
-        * Utilizar camelCase para nombres de variables y métodos. 
-    5. Formateo y Sangría (15 puntos):
+        * Utilizar camelCase para nombres de variables y métodos.
+    2. Formateo y Sangría (15 puntos):
         * El código debe estar correctamente formateado con una adecuada indentación. 
         * Uso de espacios y saltos de línea para mejorar la legibilidad. 
-    6. Comentarios y Documentación (10 puntos):
+    3. Comentarios y Documentación (10 puntos):
         * Cada método y sección del código deben tener comentarios explicativos. 
         * Comentarios de cabecera en cada clase y función deben describir brevemente su propósito. 
