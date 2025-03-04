@@ -1,5 +1,5 @@
 ![Tec de Monterrey](../../images/logotecmty.png)
-# Actividad:
+# Actividad: Escuela de Magia
 
 ## Objetivo:
 En esta actividad, comprenderás e implementarás una jerarquía de clases utilizando los conceptos de programación orientada a objetos como herencia, polimorfismo y sobrecarga de operadores.
