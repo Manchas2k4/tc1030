@@ -12,6 +12,6 @@ Carlos es un joven emprendedor que desea crear una red social llamada "AmigosCon
 * **Operaciones básicas:**
 	* Cargar catálogo. El formato del archivo es el siguiente: en la primera línea se encuentra un número que indica la cantidad de usuarios en el archivo, representado como n. Las siguientes n líneas contienen el ID y el nombre de cada usuario. Después, en las siguientes n líneas, verás el ID de cada usuario, seguido por la cantidad de amigos a agregar, representada como m, y los IDs de esos m amigos.
 	* Añadir un nuevo usuario.
-	* Mostrar todos los libros.
+	* Mostrar todos los usuarios.
 	* Añadir un nuevo amigo en la lista de amigos de un usuario.
 	* Quitar un amigo de la lista de amigos de un usuario utilizando su ID.
