@@ -17,7 +17,7 @@ On completing the educational unit, students:
         <th style="width: 40%;"><center>Sesi&oacute;n 2</center></th>
     </tr>
     <tr>
-        <td><center> 1 <br> (11 - 15 mayo) </center> </td>
+        <td><center>1</center> <br> <center>(11 - 15 mayo)</center></td>
         <td>
             <b>Durante la sesi&oacute;n:</b>
             <ul>
