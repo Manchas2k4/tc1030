@@ -26,7 +26,7 @@ On completing the educational unit, students:
             </td>
             <td><strong>Previo a la sesi&oacute;n:</strong>
                 <ul>
-                    <li><a class="instructure_file_link instructure_scribd_file inline_disabled" title="clases.pdf" href="documents/" target="_blank">Repaso sobre clases.</a></li>
+                    <li><a href="documents/clases.pdf" target="_blank">Repaso sobre clases.</a></li>
                 </ul>
 			<strong>Durante la sesi&oacute;n:</strong>
                 <ul>
