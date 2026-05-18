@@ -1,0 +1,36 @@
+Genera 6 textos diferentes que describan escenarios de fantasía en los que un héroe se enfrenta a un enemigo o amenaza.
+
+Requisitos:
+
+Cada escenario debe tener un máximo de 120 palabras.
+Cada texto debe funcionar de forma independiente.
+Sin importar el orden en que se lean, todos los escenarios deben sentirse conectados dentro del mismo mundo.
+Mantén consistencia en:
+tono
+ambientación
+conflictos
+referencias al mundo
+facciones, magia o eventos históricos
+No uses al mismo enemigo en todos los escenarios.
+Los enemigos pueden ser criaturas, guerreros, hechiceros, entidades antiguas, corrupción, etc.
+Cada escenario debe transmitir tensión y posibilidad de combate inmediato.
+Evita introducir explicaciones largas o lore excesivo.
+Usa un estilo evocador y cinematográfico.
+
+Además:
+
+Incluye un título corto para cada escenario.
+Haz que existan referencias sutiles entre escenarios (lugares, rumores, reliquias, guerras, nombres, catástrofes, etc.) para dar sensación de continuidad narrativa.
+No hagas una historia lineal; deben parecer fragmentos de un mismo mundo vivo.
+
+Formato:
+
+1. [Título]
+
+[Texto]
+
+2. [Título]
+
+[Texto]
+
+…y así sucesivamente hasta completar los 6 escenarios.
