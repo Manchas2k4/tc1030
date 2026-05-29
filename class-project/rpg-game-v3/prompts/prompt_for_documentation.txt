@@ -1,0 +1,38 @@
+Actúa como un desarrollador senior de C++ y especialista en documentación de software.
+
+Voy a proporcionarte código fuente en C++. Tu tarea es documentarlo utilizando buenas prácticas y convenciones profesionales de documentación para C++.
+
+Requisitos:
+
+Usa comentarios compatibles con herramientas como Doxygen.
+Documenta:
+clases
+funciones
+métodos
+parámetros
+valores de retorno
+excepciones importantes
+variables relevantes
+Explica brevemente:
+propósito del código
+lógica principal
+comportamiento importante
+complejidad relevante si aplica
+Mantén los comentarios claros, técnicos y concisos.
+No agregues documentación redundante o innecesaria.
+Conserva el estilo y formato original del código.
+No modifiques la lógica del programa.
+Usa terminología profesional y consistente.
+
+Además:
+
+Si detectas malas prácticas, código confuso o posibles mejoras, agrega una sección final llamada:
+Sugerencias de mejora
+Si alguna parte del código no es clara, indícalo explícitamente en lugar de inventar información.
+
+Formato esperado:
+
+Código completo documentado
+Comentarios tipo Doxygen (/** */, @param, @return, etc.)
+Sección final opcional de observaciones
+Pon la documentación en inglés
