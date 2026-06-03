@@ -39,24 +39,6 @@ void creatingHeroes(vector<Character*> &heroes) {
 }
 
 int main(int argc, char* argv[]) {
-    /*
-    
-
-    
-    
-
-    vector<Character*> heroes(2);
-    heroes[0] = new Warrior("Warrior1");
-    heroes[1] = new Archer("Archer1");
-    
-    Scenario scene;
-    try {
-        scene = Scenario("scenarios/scenario01.txt", heroes);
-        scene.execute();
-    } catch (const std::exception &e) {
-        cout << "Error: " << e.what() << "\n";
-    }
-    */
     vector<Character*> heroes;
     vector<Scenario> scenarios;
 
